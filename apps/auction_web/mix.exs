@@ -24,7 +24,7 @@ defmodule AuctionWeb.MixProject do
   def application do
     [
       mod: {AuctionWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools, :ssl]
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
