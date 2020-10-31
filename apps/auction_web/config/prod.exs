@@ -14,9 +14,11 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :auction_web, AuctionWeb.Endpoint,
-  http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  load_from_system_env: true,
+  url: [host: System.get_env("RENDER_EXTERNAL_HOSTNAME")],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
 
 # ## SSL Support
 #
