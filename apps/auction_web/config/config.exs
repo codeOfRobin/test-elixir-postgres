@@ -23,13 +23,6 @@ config :auction_web, AuctionWeb.Endpoint,
 #   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
 
 config :auction, ecto_repos: [Auction.Repo]
-
-config :auction, Auction.Repo, database: "auction",
-  username: "test_user",
-  password: "workbox-rodeo-forecast-rectify-taxiderm",
-  hostname: "localhost",
-  port: "5432"
-  
   
 # config :auction, Auction.Repo, database: "auction",
 #   adapter: Ecto.Adapters.Postgres,
