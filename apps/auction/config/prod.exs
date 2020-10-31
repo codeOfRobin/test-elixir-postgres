@@ -13,7 +13,7 @@ config :auction, Auction.Repo, database: "auction",
   ssl: true,
   username: System.get_env("DATABASE_USERNAME"),
   password: System.get_env("DATABASE_PASSWORD"),
-  hostname: System.get_env("DATABASE_URL"),
+  hostname: System.get_env("DATABASE_URL")
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 
