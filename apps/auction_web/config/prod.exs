@@ -15,7 +15,7 @@ use Mix.Config
 # before starting your production server.
 config :auction_web, AuctionWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: System.get_env("RENDER_EXTERNAL_HOSTNAME")],
+  url: [host: System.get_env("RENDER_EXTERNAL_HOSTNAME")]
 
 # ## SSL Support
 #
