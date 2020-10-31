@@ -1,8 +1,15 @@
-elixir -v
-erl -v
+#!/usr/bin/env bash
 
-npm install --prefix ./apps/auction_web/assets
+set -o errexit
+
+
 mix deps.get --only prod
 MIX_ENV=prod mix compile
 
-MIX_ENV=prod mix phx.server
+
+npm install --prefix ./assets
+npm run deploy --prefix ./assets
+mix phx.digest
+
+
+MIX_ENV=prod mix release --overwrite
